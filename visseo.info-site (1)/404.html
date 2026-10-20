@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpath d=%27M14 38 L42 86 L74 30%27 fill=%27none%27 stroke=%27%231500ff%27 stroke-width=%2713%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Ccircle cx=%2782.43%27 cy=%2715.24%27 r=%279%27 fill=%27%231500ff%27/%3E%3C/svg%3E">
+<title>Page not found — Visseo</title>
+<meta name="description" content="This page doesn't exist or has moved.">
+<meta name="robots" content="noindex, follow">
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('fonts/SpaceGrotesk.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono.woff2') format('woff2');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter.woff2') format('woff2');
+    font-weight: 400 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #ffffff; --panel: #f5f5f6; --line: rgba(0,0,0,0.12);
+    --text: #0a0a0a; --text-dim: rgba(0,0,0,0.6); --accent: #00b872;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  a, button { touch-action: manipulation; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; position: relative;
+    padding-top: 56px; overflow-x: hidden;
+    display: flex; flex-direction: column;
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.035; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; width: 100%; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* scroll progress */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--accent); z-index: 60; transition: width 0.08s linear; }
+
+  /* wordmark */
+  .brand-mark-icon { color: var(--accent); flex: none; display: inline-block; }
+
+  /* fixed top bar */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 56px; z-index: 40;
+    background: rgba(255,255,255,0.86); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 56px;
+  }
+  .brandmark {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.01em;
+    text-decoration: none; color: var(--text);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .brandmark sup { font-size: 0.55em; }
+  .top-contact {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
+    text-decoration: none; color: var(--text-dim); text-transform: uppercase;
+  }
+  .top-contact:hover { color: var(--text); }
+
+  /* 404 content */
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1; padding: 64px 0;
+  }
+  .error-block { text-align: center; }
+  .error-code {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent);
+    letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 18px;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: -0.01em; margin: 0 0 16px;
+  }
+  .error-block p {
+    color: var(--text-dim); font-size: 1rem; max-width: 420px; margin: 0 auto 36px;
+  }
+  .btn-primary {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600; background: var(--accent); color: #000000;
+    text-decoration: none; padding: 15px 28px; font-size: 0.95rem; border: 1px solid var(--accent); border-radius: 999px;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease; display: inline-block;
+  }
+  .btn-primary:hover { background: #00c26f; border-color: #00c26f; transform: translateY(-1px); }
+
+  /* footer, matching landing page */
+  footer { padding-top: 36px; padding-bottom: 30px; position: relative; z-index: 1; }
+  .footer-min {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 28px;
+    padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  .footer-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.92rem; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.03em;
+    text-decoration: none; color: var(--text-dim);
+  }
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    body { padding-top: 52px; }
+    .topbar { height: 52px; padding: 0 28px; }
+    .top-contact { display: none; }
+    .footer-min { flex-direction: column; align-items: flex-start; gap: 18px; }
+  }
+</style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "87663de782e94e5c8540d1dea85da122"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brandmark" href="index.html">
+    <svg class="brand-mark-icon" viewBox="0 0 100 100" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 38 L42 86 L74 30" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.43" cy="15.24" r="9" fill="currentColor"/></svg>
+    <span>VISSEO<sup>&reg;</sup></span>
+  </a>
+  <a class="top-contact" href="mailto:hello@visseo.info">hello@visseo.info</a>
+</header>
+
+<main class="wrap">
+  <div class="error-block">
+    <p class="error-code mono">404 / Not found</p>
+    <h1>This page doesn't exist.</h1>
+    <p>The link might be broken, or the page may have moved. Let's get you back on track.</p>
+    <a class="btn-primary" href="index.html">Back to home</a>
+  </div>
+</main>
+
+<footer class="wrap">
+  <div class="footer-min">
+    <span class="footer-brand">Visibility Architects.</span>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="impressum.html">Imprint</a>
+      <a href="datenschutz.html">Privacy Policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+    function update() {
+      var h = document.documentElement;
+      var scrolled = h.scrollTop || document.body.scrollTop;
+      var height = (h.scrollHeight || document.body.scrollHeight) - h.clientHeight;
+      bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + '%';
+    }
+    document.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>
