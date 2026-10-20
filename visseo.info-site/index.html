@@ -264,9 +264,15 @@
   .shot-desk img, .shot-phone img { filter:grayscale(1) contrast(1.05); transition:filter .5s ease; }
   .case-shot:hover .shot-desk { transform:translateY(-6px); }
   .case-shot:hover .shot-phone { transform:translateY(-12px); }
+  .case .case-split .case-bot { padding-top:0; max-width:none; }
+  .case:not(.case-light) .case-split { padding-top:60px; position:relative; z-index:2; }
+  .shot-dark { border-color:#2a2a3a; background:#111; box-shadow:0 30px 60px -24px rgba(0,0,0,.7); }
+  .shot-dark .shot-bar { background:#1a1a22; border-bottom-color:#2a2a3a; }
+  .shot-dark .shot-bar i { background:#3a3a48; }
+  .shot-dark .shot-bar b { color:#8a8a9a; }
   .case-light .case-bot { padding-top:0; }
   .case-light .case-split { padding-top:44px; }
-  @media (max-width:900px){ .case-split { grid-template-columns:1fr; gap:28px; } .case-light .case-split { padding-top:0; } .case-light { justify-content:flex-start; } }
+  @media (max-width:900px){ .case-split { grid-template-columns:1fr; gap:28px; } .case-light .case-split, .case:not(.case-light) .case-split { padding-top:0; } .case-light { justify-content:flex-start; } }
   .case-link { color:#fff; font-weight:500; text-decoration:underline; text-underline-offset:4px; }
   .tags { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 26px; padding:0; list-style:none; }
   .tags li { border:1px solid currentColor; border-radius:999px; padding:4px 12px; font-size:0.78rem; opacity:.75; }
@@ -589,11 +595,16 @@
         <p class="kicker mono" data-i18n="workFeatured">Featured project</p>
         <h3 data-i18n="caseTitle">An AI shopping assistant, designed and built end to end.</h3>
       </div>
-      <div class="case-bot">
+      <div class="case-split">
+        <div class="case-bot">
         <img class="logo-inline" src="logos/magelo-white.png" alt="Magelo" width="383" height="180">
         <p data-i18n="workMagBody">An AI shopping assistant for consumer tech.</p>
         <ul class="tags"><li>AI assistant</li><li>Claude</li><li>Cloudflare</li><li>DE · AT · BE · NL</li></ul>
         <a class="case-link" href="https://magelo.ai" target="_blank" rel="noopener" data-i18n="workMagCta">Visit magelo.ai →</a>
+      </div>
+        <a class="case-shot" href="https://magelo.ai" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="shot-desk shot-dark"><span class="shot-bar"><i></i><i></i><i></i><b>magelo.ai</b></span><picture><source srcset="work/magelo.webp" type="image/webp"><img src="work/magelo.jpg" alt="" width="1400" height="690" loading="lazy"></picture></span>
+        </a>
       </div>
     </article>
 
