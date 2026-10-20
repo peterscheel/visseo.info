@@ -243,6 +243,29 @@
   .case-bot p.dim { color:#a9a9b8; font-size:1.05rem; }
   .case-bot .gp-logo { height:30px; }
   .case-bot .logo-inline { height:40px; width:auto; margin-bottom:26px; }
+
+  /* Kundenprojekt: helle Karte mit echtem Screenshot statt Pixel-Grafik */
+  .case.case-light { background:var(--panel); color:var(--ink); border:1px solid var(--line); }
+  .case.case-light::before { display:none; }
+  .case-light .case-top { border-bottom-color:var(--line); }
+  .case-light .case-top .kicker { color:var(--ink); }
+  .case-light .case-bot p { color:var(--ink); }
+  .case-light .case-link { color:var(--ink); }
+  .case-light .tags li { color:var(--ink); border-color:var(--line); }
+  .case-split { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:var(--gutter); align-items:end; }
+  .case-light .case-bot { max-width:none; }
+  .case-shot { position:relative; display:block; padding:0 0 28px 0; text-decoration:none; }
+  .shot-desk { display:block; border-radius:12px; overflow:hidden; background:#fff; border:1px solid var(--line); box-shadow:0 30px 60px -30px rgba(11,11,11,.35); transition:transform .5s cubic-bezier(.2,.7,.1,1); }
+  .shot-bar { display:flex; align-items:center; gap:6px; height:30px; padding:0 12px; background:#f4f4f4; border-bottom:1px solid var(--line); }
+  .shot-bar i { width:9px; height:9px; border-radius:50%; background:#d6d6d6; }
+  .shot-bar b { margin-left:12px; font:500 11px/1 var(--mono,monospace); color:var(--ink-3); }
+  .shot-desk img, .shot-phone img { display:block; width:100%; height:auto; }
+  .shot-phone { position:absolute; right:-6px; bottom:0; width:24%; border-radius:18px; overflow:hidden; border:5px solid #0b0b0b; background:#0b0b0b; box-shadow:0 24px 40px -18px rgba(11,11,11,.5); transition:transform .5s cubic-bezier(.2,.7,.1,1); }
+  .case-shot:hover .shot-desk { transform:translateY(-6px); }
+  .case-shot:hover .shot-phone { transform:translateY(-12px); }
+  .case-light .case-bot { padding-top:0; }
+  .case-light .case-split { padding-top:44px; }
+  @media (max-width:900px){ .case-split { grid-template-columns:1fr; gap:28px; } .case-light .case-split { padding-top:0; } .case-light { justify-content:flex-start; } }
   .case-link { color:#fff; font-weight:500; text-decoration:underline; text-underline-offset:4px; }
   .tags { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 26px; padding:0; list-style:none; }
   .tags li { border:1px solid currentColor; border-radius:999px; padding:4px 12px; font-size:0.78rem; opacity:.75; }
@@ -516,7 +539,7 @@
     <div class="hero-art" aria-hidden="true"><canvas id="heroCanvas"></canvas></div>
     <div class="hero-inner">
       <h1><span data-i18n="heroLead">Handcrafted websites, SEO and GEO that help you</span> <span class="blue" id="taglineWord">be visible.</span><span class="visually-hidden"> Visseo — Handcrafted Websites, SEO &amp; GEO Studio for BeNeLux and Germany</span></h1>
-      <p class="hero-sub" data-i18n="heroSub">Every site is handcrafted and optimized for Google and AI search from day one. Smart use of modern tools keeps the process efficient and the price fair.</p>
+      <p class="hero-sub" data-i18n="heroSub">Built to be found on Google and in AI search.</p>
       <div class="hero-actions">
         <a class="btn btn-blue" href="#contact" data-i18n="startProject">Start a project</a>
         <a class="btn btn-line" href="#work" data-i18n="seeWork">See the work →</a>
@@ -573,17 +596,22 @@
       </div>
     </article>
 
-    <article class="case reveal" style="margin-top:14px">
-      <canvas id="caseCanvas2" aria-hidden="true"></canvas>
+    <article class="case case-light reveal" style="margin-top:14px">
       <div class="case-top">
         <p class="kicker mono" data-i18n="workClient">Client project</p>
         <h3 data-i18n="caseTitle2">A commercial park, redesigned for speed and rental enquiries.</h3>
       </div>
-      <div class="case-bot">
-        <img class="logo-inline gp-logo" src="logos/gewerbepark-white.png" alt="Gewerbepark Lonsee" width="720" height="109" loading="lazy">
-        <p data-i18n="workGlBody">A complete website redesign for a commercial park in Lonsee.</p>
-        <ul class="tags"><li>Website redesign</li><li>Mobile-first</li><li>Cloudflare</li></ul>
-        <a class="case-link" href="https://gewerbepark-lonsee.de" target="_blank" rel="noopener" data-i18n="workGlCta">Visit gewerbepark-lonsee.de →</a>
+      <div class="case-split">
+        <div class="case-bot">
+          <img class="logo-inline gp-logo" src="logos/gewerbepark-black.png" alt="Gewerbepark Lonsee" width="720" height="109" loading="lazy">
+          <p data-i18n="workGlBody">A complete website redesign for a commercial park in Lonsee.</p>
+          <ul class="tags"><li>Website redesign</li><li>Mobile-first</li><li>Cloudflare</li></ul>
+          <a class="case-link" href="https://gewerbepark-lonsee.de" target="_blank" rel="noopener" data-i18n="workGlCta">Visit gewerbepark-lonsee.de →</a>
+        </div>
+        <a class="case-shot" href="https://gewerbepark-lonsee.de" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <span class="shot-desk"><span class="shot-bar"><i></i><i></i><i></i><b>gewerbepark-lonsee.de</b></span><picture><source srcset="work/gewerbepark-lonsee.webp" type="image/webp"><img src="work/gewerbepark-lonsee.jpg" alt="" width="1200" height="750" loading="lazy"></picture></span>
+          <span class="shot-phone"><picture><source srcset="work/gewerbepark-lonsee-mobil.webp" type="image/webp"><img src="work/gewerbepark-lonsee-mobil.jpg" alt="" width="390" height="844" loading="lazy"></picture></span>
+        </a>
       </div>
     </article>
   </section>
@@ -1178,7 +1206,7 @@
       mobileLead: "Mobile-first.",
       mobileBodyRest: "Every Visseo site is designed, tested and shipped on a phone first — then scaled up to desktop, never the other way around.",
       metaLine2: "BENELUX + DACH · EST. 2022",
-      heroSub: "Every site is handcrafted and optimized for Google and AI search from day one. Smart use of modern tools keeps the process efficient and the price fair.",
+      heroSub: "Built to be found on Google and in AI search.",
       startProject: "Start a project", seeWork: "See the work →",
       labelManifesto: "Manifesto",
       manifestoHeadline: "Upcoming joint venture",
@@ -1265,7 +1293,7 @@
       mobileLead: "Mobile First.",
       mobileBodyRest: "Jede Visseo-Website wird zuerst auf dem Smartphone entworfen, getestet und ausgeliefert — und erst danach auf den Desktop skaliert, nie umgekehrt.",
       metaLine2: "BENELUX + DACH · GEGRÜNDET 2022",
-      heroSub: "Jede Website entsteht in Handarbeit und ist von Anfang an für Google und KI-Suche optimiert. Moderne Werkzeuge halten den Prozess effizient und den Preis fair.",
+      heroSub: "Gebaut, um bei Google und in der KI-Suche gefunden zu werden.",
       startProject: "Projekt starten", seeWork: "Leistungen ansehen →",
       labelManifesto: "Manifest",
       manifestoHeadline: "Bevorstehendes Joint Venture",
@@ -1352,7 +1380,7 @@
       mobileLead: "Mobile-first.",
       mobileBodyRest: "Elke Visseo-website wordt eerst op de telefoon ontworpen, getest en opgeleverd — en pas daarna opgeschaald naar desktop, nooit andersom.",
       metaLine2: "BENELUX + DACH · OPGERICHT 2022",
-      heroSub: "Elke website wordt met zorg handgemaakt en vanaf dag één geoptimaliseerd voor Google en AI-zoekopdrachten. Moderne tools houden het proces efficiënt en de prijs eerlijk.",
+      heroSub: "Gebouwd om gevonden te worden in Google en AI-zoekopdrachten.",
       startProject: "Start een project", seeWork: "Bekijk het werk →",
       labelManifesto: "Manifest",
       manifestoHeadline: "Aankomend joint venture",
