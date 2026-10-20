@@ -1,0 +1,33 @@
+# Visseo
+
+> Visseo is an AI-engineered SEO and GEO (Generative Engine Optimization) web studio serving businesses across BeNeLux (Belgium, Netherlands, Luxembourg) and Germany.
+
+Visseo builds and optimizes websites using Claude (Anthropic), with fast hosting and infrastructure on Cloudflare's global edge network. Core services: AI-powered web development, AI consulting & implementation (chatbots, automation), SEO & GEO optimization (technical SEO, content, and visibility in AI answer engines like ChatGPT, Perplexity and Google AI Overviews), graphic design & branding, and hosting & backend infrastructure.
+
+## Key facts
+
+- Name: Visseo (visseo GbR)
+- Location: Am Nohl 77, 89173 Lonsee, Germany
+- Areas served: Germany, Belgium, Netherlands, Luxembourg
+- Contact: hello@visseo.info
+- Languages: English, German, Dutch
+
+## Pages
+
+- [Home](https://visseo.info/): Services, process, capabilities, FAQ, contact form.
+- [Impressum](https://visseo.info/impressum.html): Legal notice (German law, § 5 TMG).
+- [Datenschutz](https://visseo.info/datenschutz.html): Privacy policy (GDPR).
+
+## FAQ
+
+Q: What does Visseo do?
+A: Visseo is an AI-engineered SEO and web studio that builds websites, optimizes search and AI-search visibility (SEO & GEO), and provides AI consulting, branding, and Cloudflare-hosted backend infrastructure for businesses across BeNeLux and Germany.
+
+Q: What is GEO (Generative Engine Optimization)?
+A: GEO is the practice of optimizing content and structure so AI answer engines like ChatGPT, Perplexity, and Google AI Overviews can find, understand, and cite it — alongside traditional SEO for search engines like Google.
+
+Q: Does Visseo build websites with AI?
+A: Yes. Visseo designs and builds custom websites using Claude, with high-speed hosting and infrastructure deployed on Cloudflare's global edge network.
+
+Q: Which regions does Visseo serve?
+A: Visseo works with businesses across BeNeLux (Belgium, Netherlands, Luxembourg) and Germany.

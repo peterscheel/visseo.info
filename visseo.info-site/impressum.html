@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpath d=%27M14 38 L42 86 L74 30%27 fill=%27none%27 stroke=%27%231500ff%27 stroke-width=%2713%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Ccircle cx=%2782.43%27 cy=%2715.24%27 r=%279%27 fill=%27%231500ff%27/%3E%3C/svg%3E">
+<title>Impressum — Visseo</title>
+<meta name="description" content="Impressum von Visseo GbR — Anbieterkennzeichnung gemäß § 5 TMG.">
+<link rel="canonical" href="https://visseo.info/impressum.html">
+<meta name="robots" content="index, follow">
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('fonts/SpaceGrotesk.woff2') format('woff2');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono.woff2') format('woff2');
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter.woff2') format('woff2');
+    font-weight: 400 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root {
+    --bg: #ffffff; --panel: #f5f5f6; --line: rgba(0,0,0,0.12);
+    --text: #0a0a0a; --text-dim: rgba(0,0,0,0.6); --accent: #00b872;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  a, button { touch-action: manipulation; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif; line-height: 1.6;
+    -webkit-font-smoothing: antialiased; position: relative;
+    padding-top: 56px; overflow-x: hidden;
+  }
+  body::after {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.035; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  a { color: inherit; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* scroll progress */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: var(--accent); z-index: 60; transition: width 0.08s linear; }
+
+  /* wordmark */
+  .chrome-mark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text); }
+  .brand-v { font-size: 1.3rem; line-height: 1; display: inline-block; }
+
+  /* fixed top bar */
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; height: 56px; z-index: 40;
+    background: rgba(255,255,255,0.86); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 56px;
+  }
+  .brandmark {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.01em;
+    text-decoration: none; color: var(--text);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .brandmark sup { font-size: 0.55em; }
+  .brand-mark-icon { color: var(--accent); flex: none; display: inline-block; }
+  .brand-mark-icon-lg { color: var(--accent); }
+  .top-contact {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; letter-spacing: 0.03em;
+    text-decoration: none; color: var(--text-dim); text-transform: uppercase;
+  }
+  .top-contact:hover { color: var(--text); }
+
+  main { padding: 64px 0 96px; position: relative; z-index: 1; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.01em; margin: 0 0 40px; }
+  h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; font-weight: 600; margin: 40px 0 12px; color: var(--text); }
+  p, li { color: var(--text-dim); font-size: 0.98rem; }
+  a.inline { color: var(--text); text-decoration: underline; text-underline-offset: 2px; transition: color 0.15s ease; }
+  a.inline:hover { color: var(--accent); }
+  .placeholder { color: #ffcf6b; background: rgba(255,207,107,0.12); padding: 1px 6px; border-radius: 4px; }
+  .notice {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 22px; font-size: 0.9rem; margin-bottom: 44px; color: var(--text-dim);
+  }
+
+  /* footer, matching landing page */
+  footer { padding-top: 36px; padding-bottom: 30px; position: relative; z-index: 1; }
+  .footer-min {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 28px;
+    padding-top: 26px; border-top: 1px solid var(--line);
+  }
+  .footer-brand { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.92rem; }
+  .footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.03em;
+    text-decoration: none; color: var(--text-dim);
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--text-dim); }
+
+  @media (max-width: 640px) {
+    body { padding-top: 52px; }
+    .topbar { height: 52px; padding: 0 28px; }
+    .top-contact { display: none; }
+    .footer-min { flex-direction: column; align-items: flex-start; gap: 18px; }
+  }
+</style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "87663de782e94e5c8540d1dea85da122"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brandmark" href="index.html">
+    <svg class="brand-mark-icon" viewBox="0 0 100 100" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 38 L42 86 L74 30" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.43" cy="15.24" r="9" fill="currentColor"/></svg>
+    <span>VISSEO<sup>&reg;</sup></span>
+  </a>
+  <a class="top-contact" href="mailto:hello@visseo.info">hello@visseo.info</a>
+</header>
+
+<main class="wrap">
+  <h1>Impressum</h1>
+
+  <div class="notice">
+    Dies ist eine Vorlage nach den Vorgaben von § 5 TMG bzw. § 18 MStV. Sie ersetzt keine Rechtsberatung. Bitte die markierten Platzhalter durch die eigenen Angaben ersetzen und im Zweifel von einem Anwalt oder einer Anwältin prüfen lassen, bevor die Seite veröffentlicht wird.
+  </div>
+
+  <h2>Angaben gemäß § 5 TMG</h2>
+  <p>
+    visseo.info<br>
+    2600 Antwerp-Berchem<br>
+    Belgien
+  </p>
+
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a class="inline" href="mailto:hello@visseo.info">hello@visseo.info</a>
+  </p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>
+    Peter Scheel<br>
+    Anschrift wie oben
+  </p>
+
+  <h2>EU-Streitschlichtung</h2>
+  <p>
+    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+    <a class="inline" href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.
+    Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+
+  <h2>Haftung für Inhalte</h2>
+  <p>
+    Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+  </p>
+
+  <h2>Haftung für Links</h2>
+  <p>
+    Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+  </p>
+
+  <h2>Urheberrecht</h2>
+  <p>
+    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+  </p>
+</main>
+
+<footer class="wrap">
+  <div class="footer-min">
+    <span class="footer-brand">Visibility Architects.</span>
+    <nav class="footer-links">
+      <a href="index.html">Startseite</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="mailto:hello@visseo.info">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var bar = document.getElementById('scrollProgress');
+    if (!bar) return;
+    function update() {
+      var h = document.documentElement;
+      var scrolled = h.scrollTop || document.body.scrollTop;
+      var height = (h.scrollHeight || document.body.scrollHeight) - h.clientHeight;
+      bar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + '%';
+    }
+    document.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
+
+</body>
+</html>
