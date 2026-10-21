@@ -1,6 +1,9 @@
 /og-image.png
   Cache-Control: public, max-age=31536000, immutable
 
+/og-image-square.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
 /robots.txt
   Cache-Control: public, max-age=3600
 
