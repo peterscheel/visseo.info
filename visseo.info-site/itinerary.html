@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Cpath d=%27M14 38 L42 86 L74 30%27 fill=%27none%27 stroke=%27%231500ff%27 stroke-width=%2713%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Ccircle cx=%2782.43%27 cy=%2715.24%27 r=%279%27 fill=%27%231500ff%27/%3E%3C/svg%3E">
+<title>Itinerary — China &amp; Hong Kong 2026 · Visseo</title>
+<meta name="description" content="Day-by-day itinerary for a 25-day trip through Shenzhen, Hong Kong, Guangzhou, Zhangjiajie, Chongqing and Chengdu.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @font-face { font-family:'Space Grotesk'; src:url('fonts/SpaceGrotesk.woff2') format('woff2'); font-weight:400 700; font-style:normal; font-display:swap; }
+  @font-face { font-family:'JetBrains Mono'; src:url('fonts/JetBrainsMono.woff2') format('woff2'); font-weight:400 500; font-style:normal; font-display:swap; }
+
+  :root {
+    --bg:#f1f1f1; --panel:#ffffff; --ink:#0b0b0b; --ink-2:#3d3d3d; --ink-3:#777;
+    --line:#dcdcdc; --blue:#1500ff; --black:#0b0b0b;
+    --r:14px; --gutter:clamp(18px,4.2vw,64px);
+  }
+  *,*::before,*::after { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-padding-top:110px; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Space Grotesk',system-ui,sans-serif; font-size:1rem; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:inherit; }
+  a, button { touch-action:manipulation; -webkit-tap-highlight-color:transparent; }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .wrap { width:100%; max-width:1240px; margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter); }
+  :focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
+  .scroll-progress { position:fixed; top:0; left:0; height:3px; width:0; background:var(--blue); z-index:120; }
+
+  /* header pill */
+  .topbar { position:fixed; top:16px; left:0; right:0; z-index:100; padding:0 var(--gutter); display:flex; justify-content:space-between; gap:12px; pointer-events:none; max-width:1240px; margin:0 auto; }
+  .pill { pointer-events:auto; background:#fff; border:1px solid var(--line); border-radius:var(--r); height:62px; display:flex; align-items:center; padding:0 22px 0 18px; }
+  .pill-main { flex:1; justify-content:space-between; gap:16px; }
+  .brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:600; font-size:1.55rem; letter-spacing:-0.04em; }
+  .brand svg { color:var(--blue); width:26px; height:26px; }
+  .nav { display:flex; gap:22px; font-size:.95rem; }
+  .nav a { text-decoration:none; color:var(--ink-2); }
+  .nav a:hover { color:var(--blue); }
+  .dl { pointer-events:auto; display:flex; align-items:center; gap:10px; background:var(--blue); color:#fff; text-decoration:none; border-radius:var(--r); height:62px; padding:0 26px; font-weight:500; transition:background .2s; white-space:nowrap; }
+  .dl:hover { background:#0d00c4; }
+  .dl svg { width:18px; height:18px; }
+
+  /* hero */
+  .hero { padding-top:150px; padding-bottom:40px; }
+  .kicker { font-size:.9rem; color:var(--ink-3); margin:0 0 18px; }
+  h1 { margin:0; font-weight:600; letter-spacing:-0.055em; line-height:.97; font-size:clamp(2.5rem,6vw,5.2rem); }
+  .route { margin:26px 0 0; font-size:clamp(1rem,1.5vw,1.25rem); font-weight:500; line-height:1.6; }
+  .arr { color:var(--ink-3); font-weight:400; }
+  .stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin-top:40px; }
+  .stat { background:#fff; border-radius:var(--r); padding:20px 22px; }
+  .stat .n { display:block; font-size:clamp(1.8rem,3.4vw,2.8rem); font-weight:600; letter-spacing:-0.05em; line-height:1; }
+  .stat .l { display:block; color:var(--ink-3); font-size:.88rem; margin-top:8px; }
+  .stat.dark { background:var(--black); color:#fff; } .stat.dark .l { color:#aaa; }
+
+  /* sections */
+  section { padding-top:clamp(56px,7vw,96px); }
+  h2 { margin:0 0 24px; font-weight:600; letter-spacing:-0.05em; line-height:1; font-size:clamp(2rem,4vw,3.4rem); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; position:sticky; top:88px; z-index:50; padding:10px 0; background:var(--bg); }
+  .chip { font:inherit; font-size:.9rem; display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); border-radius:999px; padding:8px 16px; cursor:pointer; color:var(--ink-2); transition:background .2s,color .2s,border-color .2s; }
+  .chip:hover { border-color:var(--ink); }
+  .chip.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .dot { width:9px; height:9px; border-radius:50%; background:var(--c,#777); display:inline-block; flex:none; }
+
+  /* day cards */
+  .days { display:grid; gap:12px; }
+  .day { display:grid; grid-template-columns:96px minmax(0,1fr); background:#fff; border-radius:var(--r); overflow:hidden; }
+  .day[hidden] { display:none; }
+  .day-side { background:var(--c); color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:22px 8px; gap:2px; }
+  .day-side .dow, .day-side .mon { font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; opacity:.85; }
+  .day-side .dd { font-size:2.2rem; font-weight:600; letter-spacing:-0.04em; line-height:1.05; }
+  .day-main { padding:22px 26px 24px; min-width:0; }
+  .day-top { display:flex; flex-wrap:wrap; align-items:center; gap:8px 16px; margin-bottom:10px; }
+  .tag { font-size:.82rem; font-weight:600; color:var(--c); background:color-mix(in srgb,var(--c) 10%,#fff); border-radius:6px; padding:3px 10px; }
+  .hotel { font-size:.75rem; color:var(--ink-3); }
+  .day h3 { margin:0 0 18px; font-size:clamp(1.05rem,1.5vw,1.25rem); font-weight:600; letter-spacing:-0.02em; line-height:1.35; }
+  .items { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; border-top:1px solid var(--line); padding-top:16px; }
+  .it .lbl { display:block; font-family:'JetBrains Mono',monospace; font-size:.68rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); margin-bottom:6px; }
+  .it p { margin:0; font-size:.9rem; color:var(--ink-2); line-height:1.5; }
+  .day.bday { box-shadow:inset 0 0 0 2px #f5b041; }
+
+  /* tables */
+  .tbl { background:#fff; border-radius:var(--r); overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.95rem; }
+  th { text-align:left; font-family:'JetBrains Mono',monospace; font-weight:400; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-3); padding:16px 20px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td { padding:16px 20px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:last-child td { border-bottom:0; }
+  td .dot { margin-right:10px; }
+  td .note { display:block; color:var(--ink-3); font-size:.82rem; margin-top:2px; }
+  .num { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  th.num { text-align:right; }
+  .dim { color:var(--ink-3); }
+  tfoot td { background:var(--black); color:#fff; font-weight:600; border:0; }
+  tfoot .dim { color:#aaa; }
+  .hint { color:var(--ink-3); font-size:.88rem; margin:14px 2px 0; }
+
+  footer { background:var(--black); color:#fff; padding:48px 0 28px; margin-top:clamp(72px,9vw,128px); }
+  .foot { display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; align-items:center; }
+  .foot .brand svg { color:#fff; }
+  .foot nav { display:flex; gap:22px; font-size:.9rem; }
+  .foot nav a { text-decoration:none; color:#e8e8e8; } .foot nav a:hover { color:#7d72ff; }
+
+  @media (max-width:980px) { .items { grid-template-columns:repeat(2,minmax(0,1fr)); } .nav { display:none; } }
+  @media (max-width:640px) {
+    .topbar { top:10px; }
+    .pill, .dl { height:54px; }
+    .brand { font-size:1.3rem; }
+    .dl { padding:0 18px; } .dl span { display:none; }
+    .hero { padding-top:110px; }
+    .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .chips { top:70px; flex-wrap:nowrap; overflow-x:auto; margin-left:calc(var(--gutter)*-1); margin-right:calc(var(--gutter)*-1); padding-left:var(--gutter); padding-right:var(--gutter); scrollbar-width:none; }
+    .chips::-webkit-scrollbar { display:none; }
+    .chip { white-space:nowrap; }
+    .day { grid-template-columns:64px minmax(0,1fr); }
+    .day-side { padding:18px 4px; } .day-side .dd { font-size:1.7rem; }
+    .day-main { padding:18px 18px 20px; }
+    .items { grid-template-columns:1fr; gap:14px; }
+    td, th { padding:14px; }
+    .hide-sm { display:none; }
+  }
+</style>
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "87663de782e94e5c8540d1dea85da122"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="topbar">
+  <div class="pill pill-main">
+    <a class="brand" href="index.html"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M14 38 L42 86 L74 30" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.43" cy="15.24" r="9" fill="currentColor"/></svg><span>Visseo</span></a>
+    <nav class="nav"><a href="#days">Day by day</a><a href="#hotels">Hotels</a><a href="#transport">Trains &amp; flights</a></nav>
+  </div>
+  <a class="dl" href="itinerary/China_Trip_2026.xlsx" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 10l6 6 6-6M5 20h14"/></svg><span>Excel</span></a>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <p class="kicker mono">Itinerary · 30 Oct – 23 Nov 2026 · all by train</p>
+    <h1>China &amp; Hong Kong 2026</h1>
+    <p class="route"><span style="color:#1f6fb2">Shenzhen</span> <span class="arr">→</span> <span style="color:#c0392b">Hong Kong</span> <span class="arr">→</span> <span style="color:#d68910">Guangzhou</span> <span class="arr">→</span> <span style="color:#2e8b57">Zhangjiajie</span> <span class="arr">→</span> <span style="color:#7d3c98">Chongqing</span> <span class="arr">→</span> <span style="color:#148f77">Chengdu</span> <span class="arr">→</span> <span style="color:#7d3c98">Chongqing</span></p>
+    <div class="stats">
+      <div class="stat"><span class="n">25</span><span class="l">days</span></div>
+      <div class="stat"><span class="n">6</span><span class="l">cities</span></div>
+      <div class="stat"><span class="n">23</span><span class="l">hotel nights</span></div>
+      <div class="stat dark"><span class="n">€2,383</span><span class="l">hotels in total</span></div>
+    </div>
+  </div>
+
+  <section class="wrap" id="days">
+    <h2>Day by day.</h2>
+    <div class="chips" role="group" aria-label="Filter by city"><button class="chip active" data-f="all">All days</button><button class="chip" data-f="Shenzhen" style="--c:#1f6fb2"><span class="dot"></span>Shenzhen</button><button class="chip" data-f="Hong Kong" style="--c:#c0392b"><span class="dot"></span>Hong Kong</button><button class="chip" data-f="Guangzhou" style="--c:#d68910"><span class="dot"></span>Guangzhou</button><button class="chip" data-f="Zhangjiajie" style="--c:#2e8b57"><span class="dot"></span>Zhangjiajie</button><button class="chip" data-f="Chongqing" style="--c:#7d3c98"><span class="dot"></span>Chongqing</button><button class="chip" data-f="Chengdu" style="--c:#148f77"><span class="dot"></span>Chengdu</button></div>
+    <div class="days">
+<article class="day" data-city="Transit" style="--c:#777">
+  <div class="day-side"><span class="dow mono">Fri</span><span class="dd">30</span><span class="mon mono">Oct</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">✈️ Flight</span></div>
+    <h3>Flight: Brussels (BRU) → Shenzhen (SZX) <br>Dep: 10:40 AM <br>Overnight flight</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>In-flight meals</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Rest and prepare flight logistics.</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>In-flight relaxation.</p></div><div class="it"><span class="lbl">Evening</span><p>Long-haul travel preparation.</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Shenzhen" style="--c:#1f6fb2">
+  <div class="day-side"><span class="dow mono">Sat</span><span class="dd">31</span><span class="mon mono">Oct</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Shenzhen</span><span class="hotel mono">🏨 Pagoda SSAW</span></div>
+    <h3>Arrival 05:00 AM at SZX. Drop bags at the hotel, rest/breakfast, then Futian (≈35 min by metro/taxi): Huaqiangbei to buy the camera (shops open ≈10:00), Lianhuashan Park nearby, evening in Futian.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Chaozhou Beef Hotpot (Freshly hand-sliced beef blanched in a savory clear broth)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Lianhuashan Park 莲花山 (Short urban summit with the classic Futian skyline view)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>📷 Camera shopping: Huaqiang Electronic World 华强电子世界 (Huaqiangbei electronics market, ≈2 km from Lianhuashan) – compare prices across several stalls before buying</p></div><div class="it"><span class="lbl">Evening</span><p>Premium craft gins at a hidden speakeasy bar in Futian</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Shenzhen" style="--c:#1f6fb2">
+  <div class="day-side"><span class="dow mono">Sun</span><span class="dd">01</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Shenzhen</span><span class="hotel mono">🏨 Pagoda SSAW</span></div>
+    <h3>Nanshan coast day: Shenzhen Bay Park coastal trail in the morning, OCT-LOFT art zone in the afternoon/evening.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Chaoshan-style seafood dinner around OCT / Shenzhen Bay (razor clams &amp; marinated goose)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Shenzhen Bay Park coastal trail (seaside path looking right over towards Hong Kong)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Wander the indie galleries and graffiti alleys of the OCT-LOFT creative art zone</p></div><div class="it"><span class="lbl">Evening</span><p>Grab local craft beers inside the industrial-chic warehouses of OCT-LOFT</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Shenzhen" style="--c:#1f6fb2">
+  <div class="day-side"><span class="dow mono">Mon</span><span class="dd">02</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Shenzhen</span><span class="hotel mono">🏨 Pagoda SSAW</span></div>
+    <h3>Easy day around the hotel in Nanshan / Nantou – everything within ~3 km. Test the new camera!</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Street snacks in Nantou Ancient Town (9 min walk from the hotel)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Nanshan Mountain 南山 (Short climb near Shekou with views over Shenzhen Bay &amp; Qianhai)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Wander the restored lanes, courtyards and small cafés of Nantou Ancient Town 南头古城 right next to the hotel</p></div><div class="it"><span class="lbl">Evening</span><p>Hidden craft brews at Bionic Brew (indie favourite in Nantou). Early night – tomorrow morning train from Futian Station (≈30 min from the hotel).</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Hong Kong" style="--c:#c0392b">
+  <div class="day-side"><span class="dow mono">Tue</span><span class="dd">03</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Hong Kong</span><span class="hotel mono">🏨 Little Tai Hang</span></div>
+    <h3>Morning bullet train Futian → West Kowloon (≈15 min), taxi/MTR to Tai Hang. Afternoon &amp; evening around Tai Hang / Causeway Bay.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Tai Hang’s little eateries around Wun Sha Street, OR Tung Po Kitchen (North Point, 10 min – drink beer out of bowls!)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>🥾 Hike: Jardine’s Lookout / Mount Butler (trailhead reachable on foot from Tai Hang, harbour views)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Victoria Park and the small Lin Fa Kung temple in Tai Hang</p></div><div class="it"><span class="lbl">Evening</span><p>Causeway Bay night streets, then a beer in one of Tai Hang’s small bars</p></div></div>
+  </div>
+</article>
+<article class="day bday" data-city="Hong Kong" style="--c:#c0392b">
+  <div class="day-side"><span class="dow mono">Wed</span><span class="dd">04</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Hong Kong</span><span class="hotel mono">🏨 Little Tai Hang</span></div>
+    <h3>🎂 Birthday: Dragon’s Back in the morning (east, ≈20 min), afternoon in Admiralty/Central (HK Park, Peak Tram), dinner at Pacific Place – all next to each other.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>🎂 30th BIRTHDAY DINNER:<br>Dim Sum Library (Pacific Place, Admiralty – 5 min from HK Park)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>🥾 Hike: Dragon&#x27;s Back Trail (Scenic ridge walk ending at Big Wave Bay surf beach)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>⭐ Doobydobap pick: Hong Kong Park &amp; Edward Youde Aviary, then the Peak Tram (lower terminus right next to the park) up to Victoria Peak</p></div><div class="it"><span class="lbl">Evening</span><p>Wednesday night horse races at Happy Valley (walking distance from Tai Hang – check the race calendar) OR a blue-stool beer in Wo On Lane, Central</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Hong Kong" style="--c:#c0392b">
+  <div class="day-side"><span class="dow mono">Thu</span><span class="dd">05</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Hong Kong</span><span class="hotel mono">🏨 Little Tai Hang</span></div>
+    <h3>Kowloon day: Kowloon Peak in the morning, Kowloon City, Mong Kok &amp; Sham Shui Po in the afternoon, Temple Street at night, Star Ferry back.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Lunch: Juicy pan-fried beef buns at Islam Food (Kowloon City)<br>Dinner – ⭐ Doobydobap pick: Oi Man Sang dai pai dong (Sham Shui Po)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>🥾 Hike: Suicide Cliff / Kowloon Peak (Rugged drop-off view over the concrete jungle)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>⭐ Doobydobap pick: Kowloon Walled City Park, then the Mong Kok flower &amp; goldfish markets</p></div><div class="it"><span class="lbl">Evening</span><p>Temple Street Night Market + ⭐ Doobydobap pick: Mak Man Kee wontons (Jordan); Star Ferry from Tsim Sha Tsui back to the island</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Hong Kong" style="--c:#c0392b">
+  <div class="day-side"><span class="dow mono">Fri</span><span class="dd">06</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Hong Kong</span><span class="hotel mono">🏨 Little Tai Hang</span></div>
+    <h3>Lamma Island (ferry from Central Pier 4) in the morning, back to Central / Sheung Wan in the afternoon and evening.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Lunch: Seafood at Sok Kwu Wan on Lamma<br>Dinner – ⭐ Doobydobap pick: Tsim Chai Kee (king prawn wonton noodles, Central) OR Kam&#x27;s Roast Goose (Wan Chai – on the way home)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>🥾 Hike: Lamma Island Family Trail (Coastal village walk passing local seafood stilt houses)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Ride the historic &#x27;Ding Ding&#x27; tram from Sheung Wan back east through Central and Wan Chai</p></div><div class="it"><span class="lbl">Evening</span><p>Blue-stool street beer in Wo On Lane, Central</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Hong Kong" style="--c:#c0392b">
+  <div class="day-side"><span class="dow mono">Sat</span><span class="dd">07</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Hong Kong</span><span class="hotel mono">🏨 Little Tai Hang</span></div>
+    <h3>Lantau day (MTR to Tung Chung): Sunset Peak or Lantau Peak, Tian Tan Buddha, Tai O fishing village. Pack in the evening.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Seafood &amp; shrimp-paste snacks in Tai O fishing village</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>🥾 Hike: Sunset Peak or Lantau Peak (Incredible mountain ridge trail views)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Tian Tan Buddha &amp; Po Lin Monastery, then Tai O stilt-house village</p></div><div class="it"><span class="lbl">Evening</span><p>Easy last evening in Tai Hang; pack for tomorrow’s train</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Guangzhou" style="--c:#d68910">
+  <div class="day-side"><span class="dow mono">Sun</span><span class="dd">08</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">🚄 Hong Kong → Guangzhou</span><span class="hotel mono">🏨 Pazhou Canton Gauss</span></div>
+    <h3>Morning bullet train West Kowloon → Guangzhou. Check in, then old Guangzhou in the west: Shamian Island, Huangsha market, Enning Road – all within walking distance of each other.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Dian Dou De (Traditional dim sum served all day – try the shrimp rice rolls; pick a branch near Shamian / Liwan)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Stroll the tree-lined riverside of Shamian Island 沙面</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Huangsha Seafood Market (next to Shamian) and the old arcade houses (Qilou) of Enning Road &amp; Liwan</p></div><div class="it"><span class="lbl">Evening</span><p>Evening Pearl River cruise under the lit Canton Tower</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Guangzhou" style="--c:#d68910">
+  <div class="day-side"><span class="dow mono">Mon</span><span class="dd">09</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Guangzhou</span><span class="hotel mono">🏨 Pazhou Canton Gauss</span></div>
+    <h3>North → south day: Baiyun Mountain in the morning, Baima market near Guangzhou Railway Station, then Yuexiu / Dongshankou in the evening.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Huajiao Jizuo (Local fiery claypot chicken with crackling Sichuan peppercorns)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Skip the cable car; hike the steps up Baiyun Mountain 白云山 to Moxing Ridge</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>🛍️ Shopping: Baima Clothing Market 白马服装市场 (wholesale fashion mall next to Guangzhou Railway Station)</p></div><div class="it"><span class="lbl">Evening</span><p>Stroll the tree-lined alleys of Dongshankou art district and eat herbal desserts at a tiny stall there</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Guangzhou" style="--c:#d68910">
+  <div class="day-side"><span class="dow mono">Tue</span><span class="dd">10</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Guangzhou</span><span class="hotel mono">🏨 Pazhou Canton Gauss</span></div>
+    <h3>Haizhu day close to the hotel: Haizhu Wetland Park, Canton Tower area and the riverside around Pazhou.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Classic Cantonese roast meats (char siu &amp; roast goose) around Canton Tower / Haizhu</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Walk the wooden boardwalk trails of Haizhu Wetland Park 海珠湿地 (≈15 min from the hotel)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Specialty coffee in the converted textile factory of TIT Creative Park, next to Canton Tower</p></div><div class="it"><span class="lbl">Evening</span><p>Local craft beers at the Pearl River Party Pier art zone (Pazhou, near the hotel)</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Zhangjiajie" style="--c:#2e8b57">
+  <div class="day-side"><span class="dow mono">Wed</span><span class="dd">11</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">🚄 Guangzhou → Zhangjiajie</span><span class="hotel mono">🏨 Pandora Hilltop Hotel</span></div>
+    <h3>🚄 Morning high-speed train Guangzhou South → Zhangjiajie West (≈5–6 h, usually via Changsha). Taxi ≈40–50 min to Pandora Hilltop Hotel in the Wulingyuan / park area – ask the hotel how to get there with luggage (park ticket / pick-up?).</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Sanxiaguo 三下锅 (Zhangjiajie&#x27;s signature spicy &quot;three-in-one&quot; dry pot) in Wulingyuan</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Evening walk through Wulingyuan town along the Suoxi River</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Buy park tickets (valid several days) and plan tomorrow’s route</p></div><div class="it"><span class="lbl">Evening</span><p>Gear check, buy cheap bamboo walking poles and prep packs for the early start</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Zhangjiajie" style="--c:#2e8b57">
+  <div class="day-side"><span class="dow mono">Thu</span><span class="dd">12</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Zhangjiajie</span><span class="hotel mono">🏨 Pandora Hilltop Hotel</span></div>
+    <h3>Full day National Forest Park, starting right from the hotel area (Bailong Elevator ≈10 min away): Bailong Elevator, Yuanjiajie (Avatar mountains), Tianzi Mountain.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Tujia Style Smoked Pork Pot (Savory, intense local ethnic minority specialty dish)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike (ANTI-CROWD PATH): At the Wulingyuan gate at opening (~07:00), shuttle bus straight to Bailong Elevator before the tour groups, Yuanjiajie first, then along to Tianzi Mountain.</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Reddit Tip: If the tour groups turn left, you turn right. Keep your hands free to dodge wild monkeys.</p></div><div class="it"><span class="lbl">Evening</span><p>Ride the Tianzi Mountain cableway down in the late afternoon (before closing) for crowd-free views, back to Wulingyuan.</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Zhangjiajie" style="--c:#2e8b57">
+  <div class="day-side"><span class="dow mono">Fri</span><span class="dd">13</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Zhangjiajie</span><span class="hotel mono">🏨 Pandora Hilltop Hotel</span></div>
+    <h3>Tianmen Mountain (cableway starts in Zhangjiajie city, ≈45 min from the hotel): Heaven&#x27;s Gate, glass skywalks.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Xiangxi Wild Mushroom Stew (Comforting claypot with forest-foraged mushrooms)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Catch one of the first cableways up Tianmen Mountain (check opening time the day before) to walk the Glass Skywalks before the groups arrive.</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Climb the 999 steps up to Heaven&#x27;s Gate (Tianmen Cave) instead of taking the escalators.</p></div><div class="it"><span class="lbl">Evening</span><p>Back in Wulingyuan: ice-cold local beers at a quiet guesthouse away from the neon centre.</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Sat</span><span class="dd">14</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">🚄 Zhangjiajie → Chongqing</span><span class="hotel mono">🏨 MC Maiyue</span></div>
+    <h3>🚄 Train Zhangjiajie West → Chongqing (≈4–5 h via Qianjiang). Evening in Yuzhong near the hotel: Hongyadong &amp; Chaotianmen are a 12-min walk.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Peijie Hotpot (Legendary local hotpot served inside an old underground air-raid shelter!)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Evening walk down the stairways from Jiefangbei to the riverfront</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Bai Xiang Ju 白象居 vertical apartments (no elevator for 24 floors!), Yuzhong</p></div><div class="it"><span class="lbl">Evening</span><p>Hongyadong 洪崖洞 lit up at night + view of the river junction from Chaotianmen</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Sun</span><span class="dd">15</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chongqing</span><span class="hotel mono">🏨 MC Maiyue</span></div>
+    <h3>West Yuzhong day: Liziba monorail, Eling Park, Daping, then Line 1 to Ciqikou ancient town.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>开半天猪耳朵面 (Famed local hidden diner known for legendary cold pig-ear noodles near Daping)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Steep hill paths of Eling Park 鹅岭公园 and the stone staircases down towards Liziba</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Watch the train go through the building at Liziba 李子坝, then Ciqikou ancient town 磁器口</p></div><div class="it"><span class="lbl">Evening</span><p>Jiefangbei &amp; Bayi Road snack street on the way home</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Mon</span><span class="dd">16</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chongqing</span><span class="hotel mono">🏨 MC Maiyue</span></div>
+    <h3>Day trip to Wulong (train ≈1–2 h depending on connection, or a tour/driver) – Karst National Park: Three Natural Bridges &amp; Furong Cave.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Wulong Mountain Wild Mushroom Hotpot (Foraging-style local mountain farm stew)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Wulong Karst National Geological Park (Three Natural Bridges &amp; deep cavern fissure walk)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Explore Furong Cave 芙蓉洞 (huge karst cave, also in Wulong)</p></div><div class="it"><span class="lbl">Evening</span><p>Relax with a local hot spring soak after the hike</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Tue</span><span class="dd">17</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chongqing</span><span class="hotel mono">🏨 MC Maiyue</span></div>
+    <h3>Nan&#x27;an day (south bank): cross the Yangtze River Cableway (station on Xinhua Road), Huangge Ancient Path, sunset &amp; night view on South Mountain.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Nanshan spring-water chicken 泉水鸡 (South Mountain&#x27;s local speciality)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Climb the rustic stone steps of the Huangge Ancient Path 黄葛古道 under giant banyan trees</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Yangtze River Cableway 长江索道 across the river</p></div><div class="it"><span class="lbl">Evening</span><p>Watch the city light up at dusk from the Yikeshu viewpoint 一棵树 or Swimin café (Nan&#x27;an)</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chengdu" style="--c:#148f77">
+  <div class="day-side"><span class="dow mono">Wed</span><span class="dd">18</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">🚄 Chongqing → Chengdu</span><span class="hotel mono">🏨 SSAW Garden Hotel Chunxi Road</span></div>
+    <h3>🚄 Morning high-speed train Chongqing → Chengdu East (≈1–1.5 h), metro Line 2 straight to Chunxi Road. Afternoon south-west: Wuhou Shrine &amp; Jinli, evening in Yulin.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Xiao Long Kan Hotpot (Famed local Sichuan peppercorn tallow hotpot)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Easy walk along the Jinjiang River promenade from Jiuyanqiao towards the hotel</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Quiet back gardens of Wuhou Shrine 武侯祠 + the lantern-lit Jinli 锦里 alley right next to it (≈4 km from the hotel)</p></div><div class="it"><span class="lbl">Evening</span><p>Wander the retro artistic alleys and small bars of Yulin 玉林 (≈2 km from Wuhou Shrine)</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chengdu" style="--c:#148f77">
+  <div class="day-side"><span class="dow mono">Thu</span><span class="dd">19</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chengdu</span><span class="hotel mono">🏨 SSAW Garden Hotel Chunxi Road</span></div>
+    <h3>Panda Base early in the morning (north), Wenshu Monastery on the way back, then People&#x27;s Park &amp; Kuanzhai Alley (next to each other) in the afternoon.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Lunch: Dongzikou Zhang Laoer Liangfen (sweet &amp; spicy bean jelly noodles near Wenshu Monastery)<br>Dinner: Chen Mapo Tofu (birthplace of authentic Mapo Tofu)</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Early morning arrival at Giant Panda Base (07:30 AM sharp) to miss the tour buses completely</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Wenshu Monastery 文殊院, then Gaiwan tea on low bamboo chairs at the People&#x27;s Park teahouse</p></div><div class="it"><span class="lbl">Evening</span><p>Kuanzhai Alley 宽窄巷子 lit up in the evening (≈1.5 km from People&#x27;s Park), then metro Line 2 home</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chengdu" style="--c:#148f77">
+  <div class="day-side"><span class="dow mono">Fri</span><span class="dd">20</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chengdu</span><span class="hotel mono">🏨 SSAW Garden Hotel Chunxi Road</span></div>
+    <h3>Day trip to Qingcheng Mountain &amp; Dujiangyan (train ≈1 h from Xipu / Chengdu West – ≈30–40 min by metro from the hotel), back in the evening.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Mountain Village Farmhouse (Smoked bacon, wild bamboo shoots &amp; forest herbs) at the foot of Qingcheng</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Hike: Qingcheng Front Mountain 青城山 (Steep stone steps through hidden Taoist temples)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Dujiangyan Irrigation System 都江堰 (UNESCO, ≈15 min from Qingcheng)</p></div><div class="it"><span class="lbl">Evening</span><p>Back in Chengdu: evening stroll through Taikoo Li 太古里 next to the hotel</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Sat</span><span class="dd">21</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">🚄 Chengdu → Chongqing</span><span class="hotel mono">🏨 Aranciel High-Rise River View Hotel (Jiefangbei / Hongyadong)</span></div>
+    <h3>Last morning around Chunxi Road, check out (Line 2 to Chengdu East ≈20 min). 🚄 Midday train Chengdu East → Chongqing (≈1–1.5 h). Check in at Jiefangbei, evening walk across the river and back.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Dinner: Chongqing grilled fish 烤鱼 around Jiefangbei</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Final tea in the courtyard teahouse of Daci Temple 大慈寺 (inside Taikoo Li, ≈5 min walk) before the train</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Walk across Qiansimen Bridge 千厮门大桥 to Jiangbeizui for the classic view back at the lit-up Hongyadong</p></div><div class="it"><span class="lbl">Evening</span><p>Night view from your high-rise river-view room, or the Raffles City &quot;Crystal&quot; sky bridge at Chaotianmen (≈10 min walk)</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Chongqing" style="--c:#7d3c98">
+  <div class="day-side"><span class="dow mono">Sun</span><span class="dd">22</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">Chongqing</span><span class="hotel mono">🏨 Aranciel High-Rise River View Hotel (Jiefangbei / Hongyadong)</span></div>
+    <h3>Last full day: afternoon &amp; evening on the Jiangbei side (Beicang, Guanyinqiao, Ninth Street – ≈20 min by taxi). Back to the hotel ≈22:00 to shower &amp; grab bags (room is booked until 23.11), leave for CKG airport (≈40 min) around 23:00.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>Spicy street food in Guanyinqiao&#x27;s alleyway basements</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Relaxed morning around Jiefangbei: the old Shibati stairs 十八梯 (≈15 min walk)</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Beicang 北仓 cultural district (old warehouses with cafés &amp; bookshops, Jiangbei)</p></div><div class="it"><span class="lbl">Evening</span><p>🍻 The Ninth Street 九街 (Guanyinqiao bar &amp; nightlife street), then back to the hotel</p></div></div>
+  </div>
+</article>
+<article class="day" data-city="Transit" style="--c:#777">
+  <div class="day-side"><span class="dow mono">Mon</span><span class="dd">23</span><span class="mon mono">Nov</span></div>
+  <div class="day-main">
+    <div class="day-top"><span class="tag">✈️ Flight</span></div>
+    <h3>Flight HU469 Chongqing (CKG) 02:50 → Brussels (BRU), arrival ≈07:35 local time.</h3>
+    <div class="items"><div class="it"><span class="lbl">Food</span><p>In-flight meals</p></div><div class="it"><span class="lbl">Outdoor / Hike</span><p>Flight departs CKG at 02:50 AM (check-in ≈3 h before).</p></div><div class="it"><span class="lbl">Culture &amp; Sights</span><p>Land at Brussels Airport (BRU) ≈07:35 AM.</p></div><div class="it"><span class="lbl">Evening</span><p>Journey completed safely.</p></div></div>
+  </div>
+</article>
+    </div>
+  </section>
+
+  <section class="wrap" id="hotels">
+    <h2>Hotels.</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>City</th><th>Hotel</th><th>Dates</th><th class="num">Nights</th><th class="num">Price</th><th class="num">Per night</th></tr></thead>
+        <tbody>
+<tr style="--c:#1f6fb2"><td><span class="dot"></span>Shenzhen</td><td><b>Pagoda SSAW</b><span class="note">Nanshan, next to Nantou Ancient Town</span></td><td class="mono">31 Oct → 03 Nov</td><td class="num">3</td><td class="num">€206</td><td class="num dim">€69</td></tr>
+<tr style="--c:#c0392b"><td><span class="dot"></span>Hong Kong</td><td><b>Little Tai Hang</b><span class="note">Tai Hang, next to Causeway Bay</span></td><td class="mono">03 Nov → 08 Nov</td><td class="num">5</td><td class="num">€900</td><td class="num dim">€180</td></tr>
+<tr style="--c:#d68910"><td><span class="dot"></span>Guangzhou</td><td><b>Pazhou Canton Gauss</b><span class="note">Pazhou (Haizhu district)</span></td><td class="mono">08 Nov → 11 Nov</td><td class="num">3</td><td class="num">€250</td><td class="num dim">€83</td></tr>
+<tr style="--c:#2e8b57"><td><span class="dot"></span>Zhangjiajie</td><td><b>Pandora Hilltop Hotel</b><span class="note">In the Wulingyuan / park area – ask how to get there with luggage</span></td><td class="mono">11 Nov → 14 Nov</td><td class="num">3</td><td class="num">€355</td><td class="num dim">€118</td></tr>
+<tr style="--c:#7d3c98"><td><span class="dot"></span>Chongqing</td><td><b>MC Maiyue</b><span class="note">Jiefangbei / Chaotianmen (Yuzhong)</span></td><td class="mono">14 Nov → 18 Nov</td><td class="num">4</td><td class="num">€305</td><td class="num dim">€76</td></tr>
+<tr style="--c:#148f77"><td><span class="dot"></span>Chengdu</td><td><b>SSAW Garden Hotel Chunxi Road</b><span class="note">Metro Line 2 straight to Chengdu East station</span></td><td class="mono">18 Nov → 21 Nov</td><td class="num">3</td><td class="num">€174</td><td class="num dim">€58</td></tr>
+<tr style="--c:#7d3c98"><td><span class="dot"></span>Chongqing</td><td><b>Aranciel High-Rise River View Hotel (Jiefangbei / Hongyadong)</b><span class="note">Room kept until the 02:50 flight</span></td><td class="mono">21 Nov → 23 Nov</td><td class="num">2</td><td class="num">€193</td><td class="num dim">€96</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td></td><td></td><td class="num">23</td><td class="num">€2,383</td><td class="num dim">€104</td></tr></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap" id="transport">
+    <h2>Trains &amp; flights.</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Date</th><th>Type</th><th>Route</th><th>Time / duration</th></tr></thead>
+        <tbody>
+<tr><td class="mono">Fri 30 Oct</td><td>✈️ Flight</td><td>Brussels (BRU) <span class="arr">→</span> Shenzhen (SZX)</td><td class="dim">Dep 10:40 → arr 31 Oct ≈05:00</td></tr>
+<tr><td class="mono">Tue 03 Nov</td><td>🚄 Train</td><td>Shenzhen Futian <span class="arr">→</span> Hong Kong West Kowloon</td><td class="dim">≈15 min</td></tr>
+<tr><td class="mono">Sun 08 Nov</td><td>🚄 Train</td><td>Hong Kong West Kowloon <span class="arr">→</span> Guangzhou South</td><td class="dim">≈1 h</td></tr>
+<tr><td class="mono">Wed 11 Nov</td><td>🚄 Train</td><td>Guangzhou South <span class="arr">→</span> Zhangjiajie West</td><td class="dim">≈5–6 h (via Changsha)</td></tr>
+<tr><td class="mono">Sat 14 Nov</td><td>🚄 Train</td><td>Zhangjiajie West <span class="arr">→</span> Chongqing</td><td class="dim">≈4–5 h (via Qianjiang)</td></tr>
+<tr><td class="mono">Mon 16 Nov</td><td>🚄 Day trip</td><td>Chongqing <span class="arr">→</span> Wulong</td><td class="dim">≈1–2 h each way</td></tr>
+<tr><td class="mono">Wed 18 Nov</td><td>🚄 Train</td><td>Chongqing <span class="arr">→</span> Chengdu East</td><td class="dim">≈1–1.5 h</td></tr>
+<tr><td class="mono">Fri 20 Nov</td><td>🚄 Day trip</td><td>Chengdu (Xipu / West) <span class="arr">→</span> Qingcheng Mountain</td><td class="dim">≈1 h each way</td></tr>
+<tr><td class="mono">Sat 21 Nov</td><td>🚄 Train</td><td>Chengdu East <span class="arr">→</span> Chongqing</td><td class="dim">≈1–1.5 h</td></tr>
+<tr><td class="mono">Mon 23 Nov</td><td>✈️ Flight HU469</td><td>Chongqing (CKG) <span class="arr">→</span> Brussels (BRU)</td><td class="dim">Dep 02:50 → arr ≈07:35</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Train durations are estimates — check exact times on Trip.com or 12306 before booking.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="index.html"><svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M14 38 L42 86 L74 30" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="82.43" cy="15.24" r="9" fill="currentColor"/></svg><span>Visseo</span></a>
+    <nav><a href="index.html">Home</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var bar = document.getElementById('scrollProgress'), ticking = false;
+    function update() {
+      var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? h.scrollTop / max * 100 : 0) + '%'; ticking = false;
+    }
+    document.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+
+    var chips = document.querySelectorAll('.chip'), days = document.querySelectorAll('.day');
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        var f = c.getAttribute('data-f');
+        chips.forEach(function (x) { x.classList.toggle('active', x === c); });
+        days.forEach(function (d) { d.hidden = !(f === 'all' || d.getAttribute('data-city') === f); });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
